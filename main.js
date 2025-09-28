@@ -5,8 +5,8 @@ const fs = require('fs');
 const path = require('path');
 require('dotenv').config(); 
 
-const GOOGLE_VISION_KEY_FILE = process.env.GOOGLE_VISION_KEY_FILE || "vision-key.json"; 
-const GEMINI_KEY = process.env.GEMINI_API_KEY || "";
+const GOOGLE_VISION_KEY_FILE = process.env.GOOGLE_VISION_KEY_FILE; 
+const GEMINI_KEY = process.env.GEMINI_API_KEY;
 
 const client = new vision.ImageAnnotatorClient({
     keyFilename: GOOGLE_VISION_KEY_FILE
@@ -694,3 +694,4 @@ app.listen(PORT, () => {
 });
 
 module.exports = app;
+
