@@ -8,10 +8,6 @@ require('dotenv').config();
 const GOOGLE_VISION_KEY_FILE = process.env.GOOGLE_VISION_KEY_FILE; 
 const GEMINI_KEY = process.env.GEMINI_API_KEY;
 
-const client = new vision.ImageAnnotatorClient({
-    keyFilename: GOOGLE_VISION_KEY_FILE
-});
-
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -263,7 +259,7 @@ async function step1_process_input(input_data, input_type = 'text') {
     
     if (input_type === 'image') {
         try {
-            const client = new vision.ImageAnnotatorClient({ keyFilename: VISION_KEY_FILE });
+            const client = new vision.ImageAnnotatorClient({ keyFilename: GOOGLE_VISION_KEY_FILE });
             const [result] = await client.textDetection(input_data);
             detections = result.textAnnotations;
 
@@ -694,4 +690,5 @@ app.listen(PORT, () => {
 });
 
 module.exports = app;
+
 
