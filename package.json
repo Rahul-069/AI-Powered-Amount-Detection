@@ -1,0 +1,16 @@
+{
+  "name": "ai-amount-detector",
+  "version": "1.0.0",
+  "description": "",
+  "main": "t1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/vision": "^5.3.3",
+    "dotenv": "^17.2.2"
+  }
+}
