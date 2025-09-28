@@ -2,9 +2,8 @@
   "name": "ai-amount-detector",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "t1.js",
   "scripts": {
-    "start": "node main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -12,6 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "@google-cloud/vision": "^5.3.3",
-    "dotenv": "^17.2.2"
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "multer": "^2.0.2"
   }
 }
