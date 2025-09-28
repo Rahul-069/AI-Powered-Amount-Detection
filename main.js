@@ -1,9 +1,16 @@
 const express = require('express');
 const multer = require('multer');
-const vision = require('@google-cloud/vision'); // For Google Cloud Vision OCR
+const vision = require('@google-cloud/vision'); 
 const fs = require('fs');
 const path = require('path');
-require('dotenv').config();
+require('dotenv').config(); 
+
+const GOOGLE_VISION_KEY_FILE = process.env.GOOGLE_VISION_KEY_FILE || "vision-key.json"; 
+const GEMINI_KEY = process.env.GEMINI_API_KEY || "";
+
+const client = new vision.ImageAnnotatorClient({
+    keyFilename: GOOGLE_VISION_KEY_FILE
+});
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -18,9 +25,7 @@ const upload = multer({
 
 const MODEL_NAME = "gemini-2.5-flash-preview-05-20";
 const API_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/models";
-const apiKey = process.env.GEMINI_API_KEY || ""; // Use environment variable
-
-const VISION_KEY_FILE = process.env.GOOGLE_VISION_KEY_FILE || "vision-key.json";
+const apiKey = GEMINI_KEY;
 
 async function exponentialBackoffFetch(url, options, maxRetries = 3, delay = 1000) {
     for (let attempt = 0; attempt < maxRetries; attempt++) {
