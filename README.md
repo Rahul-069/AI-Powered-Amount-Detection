@@ -445,5 +445,3 @@ curl https://ai-powered-amount-detection.onrender.com/health
 - Large images take longer to process
 
 ---
-
-**Made with ❤️ by Rahul**
