@@ -259,7 +259,7 @@ async function step1_process_input(input_data, input_type = 'text') {
     
     if (input_type === 'image') {
         try {
-            const client = new vision.ImageAnnotatorClient({ keyFilename: GOOGLE_VISION_KEY_FILE });
+            const client = new vision.ImageAnnotatorClient({credentials: JSON.parse(process.env.GOOGLE_VISION_KEY_FILE_JSON)});
             const [result] = await client.textDetection(input_data);
             detections = result.textAnnotations;
 
@@ -690,5 +690,6 @@ app.listen(PORT, () => {
 });
 
 module.exports = app;
+
 
 
