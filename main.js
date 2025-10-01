@@ -240,16 +240,6 @@ function calculateClassificationConfidence(amounts, raw_text, llm_success) {
     return Math.max(0.1, Math.min(0.95, confidence));
 }
 
-function calculateOverallConfidence(input_confidence, norm_confidence, class_confidence) {
-    const weights = { input: 0.4, classification: 0.35, normalization: 0.25 };
-    
-    return Math.round((
-        input_confidence * weights.input + 
-        class_confidence * weights.classification + 
-        norm_confidence * weights.normalization
-    ) * 100) / 100;
-}
-
 async function step1_process_input(input_data, input_type = 'text') {
     console.log(`**Step 1 - ${input_type.toUpperCase()} Processing**`);
     
@@ -690,6 +680,7 @@ app.listen(PORT, () => {
 });
 
 module.exports = app;
+
 
 
 
