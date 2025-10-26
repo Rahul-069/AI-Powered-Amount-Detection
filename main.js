@@ -9,6 +9,18 @@ const GOOGLE_VISION_KEY_FILE = process.env.GOOGLE_VISION_KEY_FILE;
 const GEMINI_KEY = process.env.GEMINI_API_KEY;
 
 const app = express();
+
+// Enable CORS for all origins
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    if (req.method === 'OPTIONS') {
+        return res.sendStatus(200);
+    }
+    next();
+});
+
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json({ limit: '10mb' }));
@@ -680,6 +692,7 @@ app.listen(PORT, () => {
 });
 
 module.exports = app;
+
 
 
 
