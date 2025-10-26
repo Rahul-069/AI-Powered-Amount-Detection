@@ -1,37 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Amount Detection</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
-    <div class="page-wrapper">
-        <div class="container">
-            <header>
-                <h1>AI Amount Detection</h1>
-                <p class="subtitle">Upload a receipt or bill image to extract financial amounts</p>
-            </header>
+    <div class="container">
+        <header>
+            <h1>AI Amount Detection</h1>
+            <p class="subtitle">Upload a receipt or bill image to extract financial amounts</p>
+        </header>
 
-            <div class="disclaimer">
-                ⚠️ Note: Accuracy might not be 100%. Please verify extracted amounts.
+        <div class="disclaimer">
+            ⚠️ Note: Accuracy might not be 100%. Please verify extracted amounts.
+        </div>
+
+        <div class="upload-section">
+            <input type="file" id="imageInput" accept="image/*" hidden>
+            
+            <button class="upload-btn" id="uploadBtn">
+                📁 Upload Image
+            </button>
+
+            <div class="preview-section" id="previewSection" style="display: none;">
+                <div class="file-info" id="fileInfo"> File selected</div>
+                <button class="remove-btn" id="removeBtn">Remove Image</button>
             </div>
 
-            <div class="upload-section">
-                <input type="file" id="imageInput" accept="image/*" hidden>
-                
-                <button class="upload-btn" id="uploadBtn">
-                    📁 Upload Image
-                </button>
+            <button class="detect-btn" id="detectBtn" disabled>
+                <span id="btnText">Detect Amounts</span>
+                <span class="loader" id="loader" style="display: none;"></span>
+            </button>
+        </div>
 
-                <div class="preview-section" id="previewSection" style="display: none;">
-                    <div class="file-info" id="fileInfo"> File selected</div>
-                    <button class="remove-btn" id="removeBtn">Remove Image</button>
-                </div>
-
-                <button class="detect-btn" id="detectBtn" disabled>
-                    <span id="btnText">Detect Amounts</span>
-                    <span class="loader" id="loader" style="display: none;"></span>
-                </button>
-            </div>
-
-            <div class="results-section" id="resultsSection" style="display: none;">
-                <h2>Detection Results</h2>
-                <div id="resultsContent"></div>
-            </div>
+        <div class="results-section" id="resultsSection" style="display: none;">
+            <h2>Detection Results</h2>
+            <div id="resultsContent"></div>
         </div>
     </div>
+
+    <script src="app.js"></script>
 </body>
+</html>
