@@ -14,6 +14,14 @@ body {
     justify-content: center;
 }
 
+.page-wrapper {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
 .container {
     max-width: 600px;
     width: 100%;
@@ -275,3 +283,4 @@ h1 {
         font-size: 1.6em;
     }
 }
+
