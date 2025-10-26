@@ -15,20 +15,13 @@ body {
     justify-content: center;
 }
 
-/* .container {
+.container {
     max-width: 600px;
     width: 100%;
     background: white;
     border-radius: 16px;
     padding: 40px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-} */
-
-.container {
-    max-width: 600px;
-    width: calc(100% - 40px); /* Account for side margins */
-    margin: 0 20px; /* Side margins instead */
-    /* rest of your styles */
 }
 
 header {
@@ -283,6 +276,7 @@ h1 {
         font-size: 1.6em;
     }
 }
+
 
 
 
