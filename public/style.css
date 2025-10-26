@@ -1,7 +1,6 @@
 /* Prevent layout shift from scrollbar */
 html {
     overflow-y: scroll;
-    width: 100%;
 }
 
 * {
@@ -11,28 +10,20 @@ html {
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    min-width: 100vw;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 40px 0;
 }
 
 .container {
     max-width: 600px;
-    width: 90%;
-    min-width: 300px;
+    width: calc(100vw - 40px);
     background: white;
     border-radius: 16px;
     padding: 40px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-    margin: 40px 20px;
-    position: relative;
+    margin: 0 auto;
 }
 
 header {
@@ -267,10 +258,13 @@ h1 {
 }
 
 @media (max-width: 768px) {
+    body {
+        padding: 20px 0;
+    }
+    
     .container {
-        width: 90%;
+        width: calc(100vw - 30px);
         padding: 30px 20px;
-        margin: 20px auto;
     }
     
     h1 {
