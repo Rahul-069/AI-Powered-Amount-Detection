@@ -9,6 +9,7 @@ const GOOGLE_VISION_KEY_FILE = process.env.GOOGLE_VISION_KEY_FILE;
 const GEMINI_KEY = process.env.GEMINI_API_KEY;
 
 const app = express();
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Enable CORS for all origins
 app.use((req, res, next) => {
@@ -692,6 +693,7 @@ app.listen(PORT, () => {
 });
 
 module.exports = app;
+
 
 
 
